@@ -1,33 +1,33 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../Layout/MainLayout";
 import HomePage from "../Pages/HomePage/HomePage";
 import AboutPage from "../Pages/AboutPage/AboutPage";
-import Menu from "../Pages/Menu/Menu";
 import ToDoPage from "../Pages/ToDoPage/ToDoPage";
+import Services from "../Pages/Services/Services";
 
-let router = createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout></MainLayout>,
-    children:[
-        {
-            path:"/",
-            element: <HomePage></HomePage>
-        },
-        {
-            path: "/about",
-            element: <AboutPage></AboutPage>
-        },
-        {
-          path: "/menu",
-          element: <Menu></Menu>
+    element: <MainLayout />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />
+      },
+      {
+        path: "/about",
+        element: <AboutPage />
+      },
+      {
+        path: "/services",
+        element: <Services />
       },
       {
         path: "/todopage",
-        element: <ToDoPage></ToDoPage>
-    }
+        element: <ToDoPage />
+      }
     ]
-    
   },
 ]);
+
 export default router;
